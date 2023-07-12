@@ -52,6 +52,10 @@ body {
 
 }
 
+ul{
+  list-style: none;
+}
+
 .flex {
   display: flex;
   gap: var(--gap, .6rem);
@@ -223,4 +227,24 @@ input {
 
 .button-parent div {
   gap: 1rem
+}
+
+.controls{
+  width:30%;
+  height:40vh;
+}
+
+.location{
+
+  background-color: aqua;
+
+
+}
+
+.guest{
+
+background-color: yellow;
+position: absolute;
+top:0;
+left:30%
 }

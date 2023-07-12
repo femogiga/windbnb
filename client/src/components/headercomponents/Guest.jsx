@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Increment from "./Increment";
 
-const Guest = () => {
+const Guest = ({onFocus,onBlur}) => {
     const [adult, setAdult] = useState(0);
     const [child, setChild] = useState(0);
 
@@ -17,9 +17,10 @@ const Guest = () => {
     };
 
     return (
-        <div className="guest">
+        <div className="guest controls">
             <div className="label-parent flow-2">
-                <p>GUEST</p>
+            <p>Guest</p>
+
                 <label type="text">{adult + child} guests</label>
             </div>
             <Increment

@@ -1,8 +1,8 @@
-import { ConstraintViolationError } from "objection"
-import DataProvider, { DataContext } from "../context/DataContext"
+
+import  { DataContext } from "../context/DataContext"
 import Card from "./Card"
 import Container from "./Container"
-import { useContext, useEffect, useState } from "react"
+import { useContext } from "react"
 
 const Main = () => {
 

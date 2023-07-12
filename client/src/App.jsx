@@ -12,8 +12,9 @@ function App() {
   return (
 
     <div className='app'>
-      <Header/>
+
       <DataProvider>
+        <Header />
         <Main />
       </DataProvider>
 
