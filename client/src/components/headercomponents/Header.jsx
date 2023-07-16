@@ -48,8 +48,8 @@ const Header = () => {
                 </div>
                 <div>
                     <div>
-                        <p>Guest</p>
-                        <p>Add guest</p>
+                        {/* <p>Guest</p>
+                        <p>Add guest</p> */}
                     </div>
                     <Guest isGuestExpand={isGuestExpand} />
                 </div>

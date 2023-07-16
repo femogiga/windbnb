@@ -21,6 +21,7 @@ const Guest = ({ onFocus, onBlur, isGuestExpand }) => {
             <div className="label-parent flow-2">
                 <p>Guest</p>
                 <label type="text">{isGuestExpand ? adult + child : 'add'} guests</label>
+                {/* the above checks in the label changes the value from number to text */}
             </div>
             {
                 isGuestExpand &&

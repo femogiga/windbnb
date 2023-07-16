@@ -20,7 +20,7 @@ const Location = ({ placeholder, onClick, onBlur ,isLocationExpand}) => {
     console.log(isLocationExpand)
     return (
         <div className={`location controls flow-2`}>
-            <div>
+            <div className={'label-parent'}>
                 <p>LOCATION</p>
                 <button type='text' placeholder={'Helsinki ,Finland'} onClick={onClick} onBlur={onBlur} />
             </div>

@@ -248,3 +248,9 @@ position: absolute;
 top:0;
 left:30%
 }
+
+.label-parent{
+  border:1px solid black;
+  border-radius:13px;
+  padding-left:8px
+}
