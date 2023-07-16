@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Icon from "./Icon"
 import Location from "./Location"
 import Guest from "./Guest"
@@ -9,10 +9,28 @@ import Guest from "./Guest"
 const Header = () => {
 
     const [classed, setClassed] = useState('')
+    const [isLocationExpand, setIsLocationExpand] = useState(false)
+    const [isGuestExpand, setIsGuestExpand] = useState(false)
 
-    const handleFocus = () => {
+
+
+
+    const handleLocationFocus = () => {
         setClassed('display-block')
+        setIsLocationExpand(true)
+        setIsGuestExpand(false)
+        console.log(isLocationExpand)
     }
+    const handleGuestFocus = () => {
+        setClassed('display-block')
+        setIsGuestExpand(true)
+        setIsLocationExpand(false)
+        console.log(isLocationExpand)
+
+    }
+
+
+
 
     // const handleBlur = () => {
     //     setClassed('display-none')
@@ -22,36 +40,28 @@ const Header = () => {
     return (
 
 
-        // <div className="header flex">
-        //     <article className={`search-page ${classed}`}>
-        //         <Location placeholder={'Helsinki'} onFocus={handleFocus} /*onBlur={handleBlur}*/ />
-        //         <input type='text' placeholder={'Add Guest'} onFocus={handleFocus} />
-        //         <p>GUEST</p>
-        //         <Guest />
-        //     </article>
-        //     <Icon src={'./src/assets/triangleLogo.png'} />
-
-        //     <Guest />
-        // </div>
-
 
         <div className="flex space-between">
             <div className={` search-page ${classed}`}>
                 <div>
-                    <Location placeholder={'Helsinki'} onFocus={handleFocus} />
+                    <Location placeholder={'Helsinki'} isLocationExpand={isLocationExpand} />
                 </div>
                 <div>
-                    <Guest />
+                    <div>
+                        <p>Guest</p>
+                        <p>Add guest</p>
+                    </div>
+                    <Guest isGuestExpand={isGuestExpand} />
                 </div>
             </div>
 
             <Icon src={'./src/assets/triangleLogo.png'} />
             <article className={'flex'}>
                 <div>
-                    <button onClick={handleFocus}>Helsinki,Finland</button>
+                    <button onClick={handleLocationFocus}>Helsinki,Finland</button>
                 </div>
                 <div>
-                    <button onClick={handleFocus}>Add Guest</button>
+                    <button onClick={handleGuestFocus}>Add Guest</button>
                 </div>
                 <div>
                     <span className="material-symbols-outlined">search</span>
