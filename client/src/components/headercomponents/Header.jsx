@@ -61,7 +61,7 @@ const Header = () => {
                     <Location placeholder={'Helsinki'} isLocationExpand={isLocationExpand} />
                 </div>
                 <div>
-                    <Guest isGuestExpand={isGuestExpand} />
+                    <Guest isGuestExpand={isGuestExpand} onMouseEnter={()=>setIsGuestExpand(true)}/>
                 </div>
                 <div className='search-button controls'>
                     <button><span className="material-symbols-outlined">search</span>Search</button>

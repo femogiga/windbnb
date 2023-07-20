@@ -34,6 +34,7 @@ const Guest = ({ onFocus, onBlur, isGuestExpand }) => {
             {
                 isGuestExpand &&
                 <Increment
+
                     onChange={handleChildChange}
                     heading="Children"
                     ages="Ages 2 - 12"
