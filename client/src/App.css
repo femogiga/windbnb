@@ -39,6 +39,7 @@
 .main {
   margin-inline: auto;
   z-index: 1;
+  padding-block: 2rem;
 }
 
 
@@ -196,9 +197,12 @@ input::placeholder {
   /* height:50vh; */
   position: relative;
   margin-inline: auto;
+  padding-block: 1rem;
+  padding-inline: 2rem;
   /* border: 1px solid black; */
   display: flex;
   place-items: center;
+  justify-content: space-between;
 
 }
 
@@ -217,22 +221,25 @@ input {
 
 .search-page {
   max-width: inherit;
-  height: 37vh;
-  background-color: #EB5757;
-  display: none;
+  height: 40vh;
+  background-color: white;
+  /* display: none; */
+  visibility: hidden;
   position: absolute;
   width: 100%;
   z-index: -1;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   top: 0;
-
+  left: -.8rem;
+  box-shadow: 15px 14px 12px 12px white
 }
 
 
 
 .display-block {
-  display: block;
+  /* display: block; */
+  visibility: visible;
   z-index: 2;
 }
 
@@ -261,14 +268,14 @@ input {
 }
 
 .location {
-  background-color: aqua;
+  /* background-color: aqua; */
 
 
 }
 
 .guest {
 
-  background-color: yellow;
+  /* background-color: yellow; */
   position: absolute;
   top: 0;
   left: 30%
@@ -286,7 +293,7 @@ input {
 
 .search-button {
   width: 30%;
-  background-color: yellow;
+  /* background-color: yellow; */
   position: absolute;
   top: 0;
   right: 0;
@@ -310,7 +317,7 @@ input {
 }
 
 .button-border {
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
   /* border: 1px solid red; */
   padding: 10px;
   width: 18rem;
@@ -334,7 +341,7 @@ input {
 
 .button-border>div {
   display: flex;
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 
 .button-border>div+div {
@@ -380,9 +387,24 @@ input {
 
 
 
-@media only screen and (max-width:840px ){
- .container{
-  flex-direction: column;
-  align-items:center
- }
+@media only screen and (max-width:840px) {
+  .container {
+    flex-direction: column;
+    align-items: center
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-senter;
+    align-items: flex-start;
+  }
+
+  .search-page {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+
 }

@@ -12,7 +12,7 @@ const Header = () => {
     const [classed, setClassed] = useState('')
     const [isLocationExpand, setIsLocationExpand] = useState(false)
     const [isGuestExpand, setIsGuestExpand] = useState(false)
-    const[close,setClose] = useState("")
+    const [mobile, setMobile] = useState("")
 
 
 
@@ -31,11 +31,18 @@ const Header = () => {
 
     }
 
-    const handleCloseButton = (e) =>{
+    const handleCloseButton = (e) => {
         e.preventDefault()
         setClassed('display-none')
     }
 
+
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            setMobile('mobile')
+            setClassed('mobile')
+        })
+    }, [mobile])
 
 
 
@@ -48,26 +55,22 @@ const Header = () => {
 
 
 
-        <div className="header flex space-between">
+        <div className="header flex ">
             <div className={`search-page ${classed}`}>
-
-
-                    <div>
-                        <Location placeholder={'Helsinki'} isLocationExpand={isLocationExpand} />
-                    </div>
-                    <div>
-                        <Guest isGuestExpand={isGuestExpand} />
-                    </div>
-                    <div className='search-button controls'>
-                        <button><span className="material-symbols-outlined">search</span>Search</button>
-                        <button onClick={handleCloseButton}>X</button>
-
-                    </div>
-
+                <div>
+                    <Location placeholder={'Helsinki'} isLocationExpand={isLocationExpand} />
+                </div>
+                <div>
+                    <Guest isGuestExpand={isGuestExpand} />
+                </div>
+                <div className='search-button controls'>
+                    <button><span className="material-symbols-outlined">search</span>Search</button>
+                    <button onClick={handleCloseButton}>X</button>
+                </div>
             </div>
 
-            <Icon src={'./src/assets/triangleLogo.png'} />
-            <article className={'flex button-border'} >
+            <Icon src={'/assets/triangleLogo.png'}  alt='logo'/>
+            <article className={`flex button-border ${mobile}`} >
                 <div>
                     <button onClick={handleLocationFocus}>Helsinki,Finland</button>
                 </div>
