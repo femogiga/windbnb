@@ -7,7 +7,7 @@ export const DataContext = createContext()
 
 const DataProvider = (props) => {
     const [data, setData] = useState(stays)
-    console.log(stays)
+   // console.log(stays)
 
     return (
         <DataContext.Provider value={{data,setData }}>

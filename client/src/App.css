@@ -26,9 +26,14 @@
 
 /* container is used to flex card */
 .container {
+
   display: flex;
+  justify-content: space-between;
   gap: 4rem;
   flex-wrap: wrap;
+  margin-inline: auto;
+
+
 }
 
 .main {
@@ -52,7 +57,7 @@ body {
 
 }
 
-ul{
+ul {
   list-style: none;
 }
 
@@ -93,6 +98,8 @@ ul{
   /* background-color: rgb(0, 255, 115); */
   /* white-space: nowrap; */
 }
+
+
 
 .cardframe {
   max-width: 100%;
@@ -178,13 +185,21 @@ input::placeholder {
 }
 
 .header {
-  width: 100%;
+  /* width: 88%; */
   /* background-color: rgb(0, 204, 255); */
   /* height:50vh; */
   position: relative;
-
+  margin-inline: auto;
+  border: 1px solid black;
+  display: flex;
+  place-items: center;
 
 }
+
+/* .header button{
+  border:none;
+  background-color:unset;
+} */
 
 
 input {
@@ -195,19 +210,24 @@ input {
 }
 
 .search-page {
-  max-width: 100%;
-  height: 70vh;
+  max-width: inherit;
+  height: 37vh;
   background-color: #EB5757;
   display: none;
   position: absolute;
   width: 100%;
   z-index: -1;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  top: 0;
 
 }
 
+
+
 .display-block {
   display: block;
-  z-index: 2
+  z-index: 2;
 }
 
 .display-none {
@@ -229,28 +249,102 @@ input {
   gap: 1rem
 }
 
-.controls{
-  width:30%;
-  height:40vh;
+.controls {
+  width: 25%;
+  height: 30vh;
 }
 
-.location{
-
+.location {
   background-color: aqua;
 
 
 }
 
-.guest{
+.guest {
 
-background-color: yellow;
-position: absolute;
-top:0;
-left:30%
+  background-color: yellow;
+  position: absolute;
+  top: 0;
+  left: 30%
 }
 
-.label-parent{
-  border:1px solid black;
-  border-radius:13px;
-  padding-left:8px
+.label-parent {
+  border: 1px solid black;
+  border-radius: 13px;
+  padding-left: 8px
+}
+
+.search-button {
+  width: 30%;
+  background-color: yellow;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-button>button {
+  width: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+
+}
+
+.search-button>button:nth-of-type(2) {
+  border: none;
+  outline: none;
+}
+
+.button-border {
+  background-color: aliceblue;
+  border: 1px solid red;
+  padding: 10px;
+  width: 20%;
+  justify-content: space-between;
+  border-radius: 10px;
+  border: 1px solid var(--gray-3);
+}
+
+.button-border button {
+  outline: unset;
+  border: unset;
+  box-shadow: unset;
+  padding: 5px;
+
+
+}
+
+.button-border>div {
+  display: flex;
+  background-color: yellow;
+}
+
+.button-border>div+div {
+  border-left: 1px solid black;
+
+}
+
+/* buttom border styles main  site button */
+
+.button-border div:nth-child(1)>button {
+  /* border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px; */
+}
+
+.location-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-block-start: 1rem
+}
+
+
+
+.link {
+  text-decoration: none;
+  color: var(--gray-3)
 }

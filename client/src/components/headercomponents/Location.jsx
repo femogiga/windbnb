@@ -2,6 +2,7 @@
 import { DataContext } from "../../context/DataContext"
 import LocationCard from "./LocationCard"
 import { useContext, useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 
 
@@ -26,7 +27,7 @@ const Location = ({ placeholder, onClick, onBlur ,isLocationExpand}) => {
             </div>
             <ul className={``}>
                 {
-                    isLocationExpand && newData.filter(item => item !== undefined).map((loc, index) => <li key={index}>{<LocationCard city={loc} country={'Finland'} />}</li>)
+                    isLocationExpand && newData.filter(item => item !== undefined).map((loc, index) => <li key={index}><Link className={'link'} key={index} to={"#"}>{<LocationCard city={loc} country={'Finland'} />}</Link></li>)
                 }
             </ul>
             {/* <LocationCard /> */}

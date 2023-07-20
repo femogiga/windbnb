@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import Icon from "./Icon"
 import Location from "./Location"
 import Guest from "./Guest"
+import { Link } from "react-router-dom"
 
 
 
@@ -11,6 +12,7 @@ const Header = () => {
     const [classed, setClassed] = useState('')
     const [isLocationExpand, setIsLocationExpand] = useState(false)
     const [isGuestExpand, setIsGuestExpand] = useState(false)
+    const[close,setClose] = useState("")
 
 
 
@@ -29,6 +31,11 @@ const Header = () => {
 
     }
 
+    const handleCloseButton = (e) =>{
+        e.preventDefault()
+        setClassed('display-none')
+    }
+
 
 
 
@@ -41,22 +48,26 @@ const Header = () => {
 
 
 
-        <div className="flex space-between">
-            <div className={` search-page ${classed}`}>
-                <div>
-                    <Location placeholder={'Helsinki'} isLocationExpand={isLocationExpand} />
-                </div>
-                <div>
+        <div className="header flex space-between">
+            <div className={`search-page ${classed}`}>
+
+
                     <div>
-                        {/* <p>Guest</p>
-                        <p>Add guest</p> */}
+                        <Location placeholder={'Helsinki'} isLocationExpand={isLocationExpand} />
                     </div>
-                    <Guest isGuestExpand={isGuestExpand} />
-                </div>
+                    <div>
+                        <Guest isGuestExpand={isGuestExpand} />
+                    </div>
+                    <div className='search-button controls'>
+                        <button><span className="material-symbols-outlined">search</span>Search</button>
+                        <button onClick={handleCloseButton}>X</button>
+
+                    </div>
+
             </div>
 
             <Icon src={'./src/assets/triangleLogo.png'} />
-            <article className={'flex'}>
+            <article className={'flex button-border'} >
                 <div>
                     <button onClick={handleLocationFocus}>Helsinki,Finland</button>
                 </div>

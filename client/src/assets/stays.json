@@ -152,5 +152,16 @@
     "type": "Entire apartment",
     "beds": 3,
     "photo": "https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1275&q=80"
+  },
+  {
+    "city": "Vaasa",
+    "country": "Finland",
+    "superHost": false,
+    "title": "Brand new studio apartment near the harbour",
+    "rating": 4.89,
+    "maxGuests": 6,
+    "type": "Entire apartment",
+    "beds": 3,
+    "photo": "https://images.unsplash.com/photo-1494203484021-3c454daf695d?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
   }
 ]
